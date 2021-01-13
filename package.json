@@ -33,6 +33,7 @@
     "class-transformer": "^0.3.1",
     "class-validator": "^0.12.2",
     "fastify-swagger": "^3.5.0",
+    "nestjs-rate-limiter": "^2.6.5",
     "nodemailer": "^6.4.17",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",

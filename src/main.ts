@@ -15,7 +15,7 @@ async function bootstrap() {
   // Documentation
   const options = new DocumentBuilder()
     .setTitle('API Documentation')
-    .setDescription('A Kako To? Api documentation')
+    .setDescription('NestJS Api documentation')
     .setVersion('1.0')
     .addBearerAuth()
     .build();

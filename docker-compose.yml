@@ -2,14 +2,14 @@ version: '3.7'
 
 services:
   web:
-    container_name: web
+    container_name: nest-web
     build:
       context: .
       target: ${BUILD_ENV}
     restart: always
     volumes:
-      - .:/usr/src/kakoto
-      - /usr/src/kakoto/node_modules
+      - .:/usr/src/nest-boilerplate
+      - /usr/src/nest-boilerplate/node_modules
     ports:
       - ${SERVER_PORT}:${SERVER_PORT}
     command: npm run start:dev
@@ -20,7 +20,7 @@ services:
     depends_on:
       - postgres
   postgres:
-    container_name: dbpostgres
+    container_name: nest-postgres
     image: postgres:13.1
     networks:
       - webnet
@@ -28,14 +28,14 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_DB: ${DB_DATABASE_NAME}
-      PG_DATA: /var/lib/dbpostgresql/data
+      PG_DATA: /var/lib/nest-postgresql/data
     ports:
       - 5435:5435
     expose:
       - 5435
     command: -p 5435
     volumes:
-      - pgdata:/var/lib/dbpostgresql/data
+      - pgdata:/var/lib/nest-postgresql/data
 networks:
   webnet:
 volumes:

@@ -1,4 +1,4 @@
-import { Table, Column, Model, PrimaryKey, DataType, Unique, Default } from 'sequelize-typescript';
+import { Table, Column, Model, PrimaryKey, DataType, Unique, Default, HasMany } from 'sequelize-typescript';
 
 @Table({timestamps: true, underscored: true})
 export class User extends Model<User> {
